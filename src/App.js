@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ComponentA from './component-a/component-a'
+import ComponentB from './component-b/component-b'
 
 class App extends Component {
   render() {
@@ -12,6 +14,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit and save to reload.
         </p>
+        <ComponentA />
+        <ComponentB />
       </div>
     );
   }
