@@ -1,7 +1,9 @@
-.box-b {
+.box-c {
 	border: 2px solid #aaa;
 	height: 200px;
 	width: 200px;
+	display: inline-block;
 	position: absolute;
-	right: 40%;
+	bottom: -313px;
+    left: -200px;
 }

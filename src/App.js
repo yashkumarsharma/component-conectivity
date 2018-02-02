@@ -14,7 +14,6 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit and save to reload.
         </p>
-        <ComponentA />
         <ComponentB />
       </div>
     );
