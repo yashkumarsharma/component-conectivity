@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ComponentA from './component-a/component-a'
+import ComponentLifeCycle from './component-lifecycle/component-lifecycle'
 import ComponentB from './component-b/component-b'
 
 class App extends Component {
+  updateProps = () => {
+    this.yash = 'yash'
+  }
+
   render() {
     return (
       <div className="App">
@@ -14,6 +17,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit and save to reload.
         </p>
+        <ComponentLifeCycle divya="beautiful" />
+        <br />
         <ComponentB />
       </div>
     );

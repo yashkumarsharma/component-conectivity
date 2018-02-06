@@ -30,7 +30,7 @@ class ComponentB extends Component {
 		const text = this.state.text
 		const isVisible = this.state.isVisible
 		return (
-			<div class="box box-b">
+			<div className="box box-b">
 				<input type='text' onChange={this.textOnChange} /> <button onClick={this.loadText} >Enter</button>
 				<ComponentA text={text} />
 				{isVisible && <ComponentC text="Hello I am Divya" /> }

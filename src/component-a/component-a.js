@@ -4,8 +4,8 @@ import './component-a.css'
 class ComponentA extends Component {
 	render (props) {
 		return (
-			<div class="box box-a">
-				Name: {this.props.text}
+			<div className="box box-a">
+				First Name: {this.props.text}
 			</div>
 		)
 	}
