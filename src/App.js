@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom'
 import './App.css';
 import ComponentLifeCycle from './component-lifecycle/component-lifecycle'
 import ComponentB from './component-b/component-b'
 
 class App extends Component {
-  updateProps = () => {
-    this.yash = 'yash'
-  }
-
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome</h1>
+          <h1 className="App-title">First Project</h1>
+          <a className="nav" href="/">home</a>
+          <a className="nav" href="/component-lifecycle">Component Lifecycle</a> 
         </header>
-        <p className="App-intro">
-          To get started, edit and save to reload.
-        </p>
-        <ComponentLifeCycle divya="beautiful" />
-        <br />
-        <ComponentB />
+        <Switch>
+          <Route exact path='/' component={ComponentB} />
+          <Route exact path='/component-lifecycle' component={ComponentLifeCycle} />
+        </Switch>
       </div>
     );
   }
