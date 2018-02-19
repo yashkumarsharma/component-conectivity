@@ -1,0 +1,7 @@
+.component-c {
+	border: 1px solid #aaa;
+	height: 200px;
+	width: 200px;
+	display: inline-block;
+	margin: 20px;
+}

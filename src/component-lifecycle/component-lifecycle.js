@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
-import './component-lifecycle.css'
+import ComponentA from '../component-lifecycle-a/component-lifecycle-a'
+import './component-lifecycle-a.css'
 
+
+import './component-lifecycle.css'
 
 class ComponentLifeCycle extends Component {
 	constructor(props) {
@@ -27,6 +30,9 @@ class ComponentLifeCycle extends Component {
 				{loader && <div className="loader">
 				<img src='http://4.bp.blogspot.com/-WL7QPLfJZE8/Uy6-Q_MlOeI/AAAAAAAABaE/p7-7s8JUuWs/s1600/red+loader.gif' />
 				</div>}
+				{!loader &&
+					<component-lifecycle-a />
+				}
 			</div>
 
 		)
