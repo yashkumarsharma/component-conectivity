@@ -8,7 +8,8 @@ class ComponentLifeCycle extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			loader: false
+			loader: false,
+			color: 'yellow'
 		}
 		this.json = {
 			a: 'aa',
@@ -16,6 +17,11 @@ class ComponentLifeCycle extends Component {
 		}
 		this.array = [1,2,3,4,5]
 		console.log('constructor')
+	}
+
+	changeColor = () => {
+		console.log('call')
+		this.setState({color: 'black'})
 	}
 
 	componentWillMount() {
@@ -35,8 +41,8 @@ class ComponentLifeCycle extends Component {
 				<img src='http://4.bp.blogspot.com/-WL7QPLfJZE8/Uy6-Q_MlOeI/AAAAAAAABaE/p7-7s8JUuWs/s1600/red+loader.gif' />
 				</div>}
 
-				{!loader && <ComponentLifecycleA data={this.json}/>}
-				{!loader && <ComponentLifecycleB data={this.array}/>}
+				{!loader && <ComponentLifecycleA data={this.json} colorOfA={this.state.color} />}
+				{!loader && <ComponentLifecycleB data={this.array} onButtonClick={this.changeColor}/>}
 				
 			</div>
 

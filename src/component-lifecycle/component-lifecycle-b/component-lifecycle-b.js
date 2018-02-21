@@ -6,6 +6,7 @@ class ComponentLifecycleB extends Component {
 		super(props)
 		console.log(this.props.data)
 	} 
+
 	render (props) {
 		return (
 			<div className="component-b">
@@ -13,7 +14,7 @@ class ComponentLifecycleB extends Component {
 					<li><span>Value 1: </span><span>{this.props.data[1]}</span></li>
 					<li><span>Value 2: </span><span>{this.props.data[2]}</span></li>
 				</ul>
-				<button>Change color of A </button>
+				<button onClick={this.props.onButtonClick}>Change color of A </button>
 			</div>
 		)
 	}
