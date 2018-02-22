@@ -9,7 +9,8 @@ class ComponentLifeCycle extends Component {
 		super(props)
 		this.state = {
 			loader: false,
-			color: 'yellow'
+			color: 'yellow',
+			isDestroy: false
 		}
 		this.json = {
 			a: 'aa',
@@ -25,7 +26,9 @@ class ComponentLifeCycle extends Component {
 	}
 
 	destroyC = () => {
-		const destroyed = true;
+		console.log('call destroy')
+		this.setState({'isDestroy': true})
+
 	}
 
 	componentWillMount() {
@@ -46,9 +49,9 @@ class ComponentLifeCycle extends Component {
 				<img src='http://4.bp.blogspot.com/-WL7QPLfJZE8/Uy6-Q_MlOeI/AAAAAAAABaE/p7-7s8JUuWs/s1600/red+loader.gif' />
 				</div>}
 
-				{!loader && <ComponentLifecycleA data={this.json} colorOfA={this.state.color} />}
+				{!loader && <ComponentLifecycleA data={this.json} colorOfA={this.state.color} onClickDestroy={this.destroyC}/>}
 				{!loader && <ComponentLifecycleB data={this.array} onButtonClick={this.changeColor}/>}
-				{!loader && <ComponentLifecycleC />}
+				{!loader && <ComponentLifecycleC isDestroy={this.state.isDestroy} />}
 				
 			</div>
 

@@ -23,7 +23,7 @@ class ComponentLifecycleA extends Component {
 					<li><span>Value 1: </span><span>{this.props.data.a}</span></li>
 					<li><span>Value 2: </span><span>{this.props.data.b}</span></li>
 				</ul>
-				<button>Destroy C</button>
+				<button onClick={() => this.props.onClickDestroy() }>Destroy C</button>
 
 			</div>
 		)

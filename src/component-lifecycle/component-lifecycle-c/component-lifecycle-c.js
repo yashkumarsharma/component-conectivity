@@ -10,6 +10,11 @@ class ComponentLifecycleC extends Component {
 		)
 	}
 
+	ComponentWillUnmount() {
+		if(this.props.isDestroy) 
+			this.ComponentLifecycleC.destroy()
+	} 
+
 }
 
 export default ComponentLifecycleC;
