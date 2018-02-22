@@ -51,7 +51,7 @@ class ComponentLifeCycle extends Component {
 
 				{!loader && <ComponentLifecycleA data={this.json} colorOfA={this.state.color} onClickDestroy={this.destroyC}/>}
 				{!loader && <ComponentLifecycleB data={this.array} onButtonClick={this.changeColor}/>}
-				{!loader && <ComponentLifecycleC isDestroy={this.state.isDestroy} />}
+				{!loader && !this.state.isDestroy && <ComponentLifecycleC isDestroy={this.state.isDestroy} />}
 				
 			</div>
 

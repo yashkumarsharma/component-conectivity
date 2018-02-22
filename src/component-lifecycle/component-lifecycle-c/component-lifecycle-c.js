@@ -10,9 +10,8 @@ class ComponentLifecycleC extends Component {
 		)
 	}
 
-	ComponentWillUnmount() {
-		if(this.props.isDestroy) 
-			this.ComponentLifecycleC.destroy()
+	componentWillUnmount() {
+		console.log('done')
 	} 
 
 }
