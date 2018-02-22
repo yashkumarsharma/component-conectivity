@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import './component-lifecycle.css'
 import ComponentLifecycleA from './component-lifecycle-a/component-lifecycle-a'
-
 import ComponentLifecycleB from './component-lifecycle-b/component-lifecycle-b'
+import ComponentLifecycleC from './component-lifecycle-c/component-lifecycle-c'
 
 class ComponentLifeCycle extends Component {
 	constructor(props) {
@@ -21,7 +21,11 @@ class ComponentLifeCycle extends Component {
 
 	changeColor = () => {
 		console.log('call')
-		this.setState({color: 'black'})
+		this.setState({color: 'green'})
+	}
+
+	destroyC = () => {
+		const destroyed = true;
 	}
 
 	componentWillMount() {
@@ -34,6 +38,7 @@ class ComponentLifeCycle extends Component {
 		//const isVisible = this.state.isVisible
 		const loader = this.state.loader
 		console.log(this.state.loader + "2");
+		console.log(this.state.color + "color")
 
 		return (
 			<div className="wrapper">
@@ -43,6 +48,7 @@ class ComponentLifeCycle extends Component {
 
 				{!loader && <ComponentLifecycleA data={this.json} colorOfA={this.state.color} />}
 				{!loader && <ComponentLifecycleB data={this.array} onButtonClick={this.changeColor}/>}
+				{!loader && <ComponentLifecycleC />}
 				
 			</div>
 

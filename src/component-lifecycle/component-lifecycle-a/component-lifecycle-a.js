@@ -10,19 +10,20 @@ class ComponentLifecycleA extends Component {
 		}
 	} 
 
-	changeComponentColor = () => {
-		this.setState({color: this.props.colorOfA})
+	componentWillReceiveProps(nextProps) {
+		this.setState({color: nextProps.colorOfA})
+		console.log(nextProps.colorOfA + "nextProps")
 	}
 
 	render (props) {
 		return (
-			<div className="component-a">
+			<div className="component-a" style={{'background': this.state.color}}>
 			{this.state.color}
 				<ul>
 					<li><span>Value 1: </span><span>{this.props.data.a}</span></li>
 					<li><span>Value 2: </span><span>{this.props.data.b}</span></li>
 				</ul>
-				<button>Load C</button>
+				<button>Destroy C</button>
 
 			</div>
 		)

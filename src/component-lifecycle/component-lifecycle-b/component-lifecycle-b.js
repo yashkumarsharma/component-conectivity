@@ -7,14 +7,29 @@ class ComponentLifecycleB extends Component {
 		console.log(this.props.data)
 	} 
 
+	indexing = () => {
+		const arr = []
+		for (var i = 0; i < this.props.data.length; i++) {
+			console.log(i, "D")
+			arr.push(<li><span>Value :{i+1} </span><span>{this.props.data[i]}</span></li>)
+		}
+		return <div>{arr}</div>
+	}
+
 	render (props) {
 		return (
 			<div className="component-b">
+				<h2>Loop 1</h2>
 				<ul>
-					<li><span>Value 1: </span><span>{this.props.data[1]}</span></li>
-					<li><span>Value 2: </span><span>{this.props.data[2]}</span></li>
+				{this.indexing()}
 				</ul>
-				<button onClick={this.props.onButtonClick}>Change color of A </button>
+				<h2>Loop 2</h2>
+				<ul>
+					{this.props.data.map(function(value, index){
+						return <li key={index}>value: {value}</li>
+					})}
+				</ul>
+				<button onClick={() => this.props.onButtonClick()}>Change color of A </button>
 			</div>
 		)
 	}

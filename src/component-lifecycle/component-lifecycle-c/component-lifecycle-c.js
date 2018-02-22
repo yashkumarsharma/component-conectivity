@@ -1,15 +1,15 @@
 import React, {Component} from 'react'
 import './component-lifecycle-c.css'
 
-class ComponentA extends Component {
+class ComponentLifecycleC extends Component {
 	render (props) {
 		return (
 			<div className="component-lifecycle-c">
-				c
+				I am Component 'C'.
 			</div>
 		)
 	}
 
 }
 
-export default ComponentA;
+export default ComponentLifecycleC;
