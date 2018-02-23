@@ -12,10 +12,12 @@ class App extends Component {
           <h1 className="App-title">First Project</h1>
           <a className="nav" href="/">home</a>
           <a className="nav" href="/component-lifecycle">Component Lifecycle</a> 
+          <a className="nav" href="/application">Application</a>
         </header>
         <Switch>
           <Route exact path='/' component={ComponentB} />
           <Route exact path='/component-lifecycle' component={ComponentLifeCycle} />
+          <Route exact path="/application" component={application} />
         </Switch>
       </div>
     );
