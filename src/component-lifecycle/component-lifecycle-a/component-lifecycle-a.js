@@ -15,6 +15,13 @@ class ComponentLifecycleA extends Component {
 		console.log(nextProps.colorOfA + "nextProps")
 	}
 
+	shouldComponentUpdate(nextProps) {
+		if (nextProps.colorOfA === 'orange') return false
+
+		console.log('shouldComponentUpdate 2')
+		return true
+	}
+
 	render (props) {
 		return (
 			<div className="component-a" style={{'background': this.state.color}}>

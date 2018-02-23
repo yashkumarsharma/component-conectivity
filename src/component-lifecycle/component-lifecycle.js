@@ -9,7 +9,7 @@ class ComponentLifeCycle extends Component {
 		super(props)
 		this.state = {
 			loader: false,
-			color: 'yellow',
+			color: 'white',
 			isDestroy: false
 		}
 		this.json = {
@@ -22,7 +22,7 @@ class ComponentLifeCycle extends Component {
 
 	changeColor = () => {
 		console.log('call')
-		this.setState({color: 'green'})
+		this.setState({color: 'gray'})
 	}
 
 	destroyC = () => {
