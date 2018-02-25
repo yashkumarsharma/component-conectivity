@@ -26,8 +26,8 @@ class ComponentLifeCycle extends Component {
 	}
 
 	destroyC = () => {
-		console.log('call destroy')
-		this.setState({'isDestroy': true})
+		this.setState({isDestroy: true})
+		//http://sean-smith.me/assets/portfolio/leaderboard/index.html
 
 	}
 
@@ -40,13 +40,12 @@ class ComponentLifeCycle extends Component {
 	render () {
 		//const isVisible = this.state.isVisible
 		const loader = this.state.loader
-		console.log(this.state.loader + "2");
 		console.log(this.state.color + "color")
 
 		return (
 			<div className="wrapper">
 				{loader && <div className="loader">
-				<img src='http://4.bp.blogspot.com/-WL7QPLfJZE8/Uy6-Q_MlOeI/AAAAAAAABaE/p7-7s8JUuWs/s1600/red+loader.gif' />
+				<img src='https://media.giphy.com/media/rcwkj93o4L9As/giphy.gif' alt=""/>
 				</div>}
 
 				{!loader && <ComponentLifecycleA data={this.json} colorOfA={this.state.color} onClickDestroy={this.destroyC}/>}

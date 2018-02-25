@@ -26,7 +26,7 @@ class ComponentLifecycleB extends Component {
 				<h2>Loop 2</h2>
 				<ul>
 					{this.props.data.map(function(value, index){
-						return <li key={index}>value: {value}</li>
+						return <li key={value}>value: {value}</li>
 					})}
 				</ul>
 				<button onClick={() => this.props.onButtonClick()}>Change color of A </button>

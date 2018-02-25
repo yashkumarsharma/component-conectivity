@@ -1,0 +1,28 @@
+.button-wrapper {
+	margin: 10px;
+	background: #b2ad7f;
+}
+
+.button {
+	margin: 10px;
+	padding: 10px;
+	background: #d64161;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+.table-wrapper {
+	margin: auto;
+}
+
+table {
+	border-collapse: collapse;
+	margin: auto;
+}
+
+table tr td {
+	padding: 5px 20px;
+	border: 1px solid #ddd;
+	text-align: left;
+}

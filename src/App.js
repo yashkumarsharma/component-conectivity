@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import './App.css';
 import ComponentLifeCycle from './component-lifecycle/component-lifecycle'
 import ComponentB from './component-b/component-b'
+import Application from './application/application'
 
 class App extends Component {
   render() {
@@ -17,7 +18,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={ComponentB} />
           <Route exact path='/component-lifecycle' component={ComponentLifeCycle} />
-          <Route exact path="/application" component={application} />
+          <Route exact path="/application" component={Application} />
         </Switch>
       </div>
     );
