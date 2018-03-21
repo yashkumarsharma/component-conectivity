@@ -4,25 +4,26 @@ import './application.css'
 class Application extends Component {
 	constructor() {
 		super()
-		this.state = {
-			count: 0,
-			array: [
+		const array= {[
 				{'Name': 'Kanishka', 'Recent': 17, 'Alltime': 1997, 'Activity': '19:58:50 February 20, 2018', 'url': 'https://www.google.co.in'  },
 				{'Name': 'Rahul', 'Recent': 2, 'Alltime': 1992, 'Activity': '20:58:50 February 20, 2018', 'url': 'https://www.google.co.in'  },
 				{'Name': 'Yash', 'Recent': 14, 'Alltime': 1991, 'Activity': '19:28:50 February 20, 2018', 'url': 'https://www.google.co.in'  },
 				{'Name': 'Shashank', 'Recent': 24, 'Alltime': 1990, 'Activity': '20:19:51 February 20, 2018', 'url': 'https://www.google.co.in'  },
 				{'Name': 'Divya', 'Recent': 12, 'Alltime': 1988, 'Activity': '21:50:40 February 20, 2018', 'url': 'https://www.google.co.in'  }			
-			]
+			]},
+		this.state = {
+			count: 0,
+			activeBtn: false
 		}
 	}
 
 	loadDefault = () => {
 		const arr = []
 		console.log("-----1---------")
-		console.log(this.state.array[0] )
+		//console.log(this,props.array[0] )
 		console.log("-------1-------")
 
-		this.state.array.map(function(value, index){
+		this.array.map(function(value, index){
 			arr.push(
 				<tr key={index}>
 					<td key="{value.name}"><a href={value.url}>{value.Name}</a></td><td key="{value.Recent}">{value.Recent}</td>
@@ -39,25 +40,24 @@ class Application extends Component {
 
 	sortRecent = () => {
 	 	const arr = []
-		this.state.array.sort((a, b) => a.Recent > b.Recent)
+		this.array.sort((a, b) => a.Recent < b.Recent)
 		.map(function(value, index){
 			arr.push(value)
 		})
-		this.setState({'array': arr})
+		this.setState({array: arr})
 		console.log("--------------")
 		console.log(arr)
 		console.log("--------------")
-
 	}
 
 	sortAllTime = () => {
 	 	const arr = []
-			this.state.array.sort((a, b) => a.Alltime > b.Alltime)
+			this.array.sort((a, b) => a.Alltime > b.Alltime)
 			.map(function(value, index){
 				arr.push(value)
 			})
-			this.setState({'array': arr})
- }
+			this.setState({array: arr})
+  }
 
 
 	render() {
