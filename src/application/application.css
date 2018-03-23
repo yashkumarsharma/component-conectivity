@@ -12,6 +12,10 @@
 	cursor: pointer;
 }
 
+.button.active {
+	background: #9b1331;
+}
+
 .table-wrapper {
 	margin: auto;
 }
