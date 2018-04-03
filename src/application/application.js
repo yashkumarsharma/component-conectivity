@@ -13,11 +13,11 @@ class Application extends Component {
 			]
 		this.state = {
 			count: 0,
-			activeItem: 'recent'
+			activeItem: 'Recent'
 		}
 	}
 
-	loadDefault = (arr) => {
+	renderTable = (arr) => {
 		const newArr = []
 		arr.map(function(value, index){
 			newArr.push(
@@ -32,26 +32,30 @@ class Application extends Component {
 
   loadData = (arr , key , sortType) => {
   	const newArr = []
-  	if(sortType==='accending') {
-	  	arr.sort((a, b) => key.a < key.b)
+  	
+  	if(sortType==='ascending') {
+  		console.log('first')
+	  	arr.sort((a, b) => a[key] > b[key])
 	  	.map(function(value, index){
 				newArr.push(value)
 			})
-			return true
-			this.setState({array: newArr})
+					this.setState({array: newArr, activeItem: key})
 
 		}
 
-		if(sortType==='decending') {
+		if(sortType==='descending') {
 			console.log(123)
-			arr.sort((a, b) => key.a > key.b)
+			arr.sort((a, b) => a[key] < b[key])
 	  	.map(function(value, index){
 				newArr.push(value)
 			})
-			return true
-			this.setState({array: newArr})
+					this.setState({array: newArr, activeItem: key})
 
 		}
+  }
+
+  componentDidMount() {
+  	this.loadData(this.array, 'Recent', 'descending')
   }
 
 	render() {
@@ -60,23 +64,23 @@ class Application extends Component {
 			<h1>Application</h1>
 			<div className="button-wrapper">
 				<button 
-				className={"button " + (this.state.activeItem === 'recent' ? 'active' : '')} 
-				onClick={this.loadData(this.array, this.array.recent, 'decending')} >
+				className={"button " + (this.state.activeItem === 'Recent' ? 'active' : '')} 
+				onClick={() => this.loadData(this.array, 'Recent', 'descending')} >
 				Show Recent
 				</button>
 				<button 
-				className={"button " + (this.state.activeItem === 'alltime' ? 'active' : '')}  
-				onClick={this.loadData(this.array, this.array.alltime, 'decending')} >
+				className={"button " + (this.state.activeItem === 'Alltime' ? 'active' : '')}  
+				onClick={()=>this.loadData(this.array, 'Alltime', 'descending')} >
 				Show Alltime
 				</button>
 				<button 
 				className={"button " + (this.state.activeItem === 'sortRecent' ? 'active' : '')}  
-				onClick={this.sortRecent}>
+				onClick={()=>this.loadData(this.array, 'Recent', 'ascending')} >
 				Sortby Recent
 				</button>
 				<button 
 				className={"button " + (this.state.activeItem === 'sortAlltime' ? 'active' : '')}  
-				onClick={this.sortAlltime}>
+				onClick={()=>this.loadData(this.array, 'Alltime', 'ascending')} >
 				Sortby Alltime
 				</button>
 			</div>
@@ -98,7 +102,7 @@ class Application extends Component {
 							</th>
 						</tr>
 					</thead>
-						{this.loadDefault(this.array)}
+						{this.renderTable(this.array)}
 				</table>
 			</div>
 			</div>
