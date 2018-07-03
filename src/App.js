@@ -4,6 +4,7 @@ import './App.css';
 import ComponentLifeCycle from './component-lifecycle/component-lifecycle'
 import ComponentB from './component-b/component-b'
 import Application from './application/application'
+import DesignComponent from './design-component/design-component'
 
 class App extends Component {
   render() {
@@ -14,11 +15,13 @@ class App extends Component {
           <a className="nav" href="/">home</a>
           <a className="nav" href="/component-lifecycle">Component Lifecycle</a> 
           <a className="nav" href="/application">Application</a>
+          <a className="nav" href="/design-component">Design Component</a>
         </header>
         <Switch>
           <Route exact path='/' component={ComponentB} />
           <Route exact path='/component-lifecycle' component={ComponentLifeCycle} />
           <Route exact path="/application" component={Application} />
+          <Route exact path='/design-component' component={DesignComponent} />
         </Switch>
       </div>
     );
